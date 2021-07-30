@@ -34,14 +34,28 @@ export default {
 </script>
 
 <template>
-  <div v-if="totalPages > 0">
+  <div v-if="totalPages > 0" class="page-list">
     <Page :data="pages[currentPageIdx].data" />
     <nav>
-      Page {{ currentPageIdx + 1 }} of {{ totalPages }}
       <button @click="handlePageBack">Back</button>
+      <p>Page {{ currentPageIdx + 1 }} of {{ totalPages }}</p>
       <button @click="handlePageForward">Forward</button>
     </nav>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.page-list {
+  max-width: 576px;
+  margin: auto;
+}
+
+nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+</style>

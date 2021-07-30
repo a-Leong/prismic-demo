@@ -42,6 +42,7 @@ export default {
       <button @click="viewHomepage">Homepage</button>
       <button @click="viewPages">Pages</button>
     </nav>
+    <button @click="getContent">Refresh content from Prismic API</button>
     <div
       v-if="homepage != null && viewing === 'homepage'"
       class="homepage"
@@ -62,7 +63,7 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style>
 .homepage {
   display: flex;
   flex-direction: row;
@@ -72,5 +73,9 @@ export default {
 .homepage-content {
   text-align: center;
   max-width: 576px;
+}
+
+button {
+  margin: 8px;
 }
 </style>

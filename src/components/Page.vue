@@ -3,7 +3,7 @@ import SliceZone from "vue-slicezone";
 
 import CurriculumText from "@/slices/CurriculumText";
 import CurriculumImage from "@/slices/CurriculumImage";
-import MultipleChoiceQuestion from "@/slices/MultipleChoiceQuestion";
+import CurriculumQuestion from "@/slices/MultipleChoiceQuestion";
 import TextResponseQuestion from "@/slices/TextResponseQuestion";
 
 export default {
@@ -18,7 +18,7 @@ export default {
       slices: {
         CurriculumText,
         CurriculumImage,
-        MultipleChoiceQuestion,
+        CurriculumQuestion,
         TextResponseQuestion,
       },
     };
@@ -27,17 +27,8 @@ export default {
 </script>
 
 <template>
-  <div class="page">
-    <SliceZone
-      :slices="data.body"
-      :resolver="({ sliceName }) => slices[sliceName]"
-    />
-  </div>
+  <SliceZone
+    :slices="data.body"
+    :resolver="({ sliceName }) => slices[sliceName]"
+  />
 </template>
-
-<style scoped>
-.page {
-  display: flex;
-  justify-content: center;
-}
-</style>
