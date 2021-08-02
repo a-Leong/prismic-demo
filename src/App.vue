@@ -14,6 +14,11 @@ export default {
       pages: null,
     };
   },
+  computed: {
+    reversedPages: function() {
+      return [...this.pages.results].reverse();
+    },
+  },
   methods: {
     viewHomepage() {
       this.viewing = "homepage";
@@ -58,7 +63,7 @@ export default {
       </div>
     </div>
     <div v-if="pages != null && viewing === 'pages'">
-      <page-list :pages="pages.results" />
+      <page-list :pages="reversedPages" />
     </div>
   </div>
 </template>

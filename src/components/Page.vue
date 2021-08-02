@@ -4,6 +4,7 @@ import SliceZone from "vue-slicezone";
 import CurriculumText from "@/slices/CurriculumText";
 import CurriculumImage from "@/slices/CurriculumImage";
 import CurriculumQuestion from "@/slices/MultipleChoiceQuestion";
+import SingleSelectQuestion from "@/slices/SingleSelectQuestion";
 import TextResponseQuestion from "@/slices/TextResponseQuestion";
 
 export default {
@@ -19,6 +20,7 @@ export default {
         CurriculumText,
         CurriculumImage,
         CurriculumQuestion,
+        SingleSelectQuestion,
         TextResponseQuestion,
       },
     };
